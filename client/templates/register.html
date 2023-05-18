@@ -101,12 +101,14 @@ A ny individuals and organizations and not for commercial use, professiona websi
         var password_1 = $('.password_1').val();
         var password_2 = $('.password_2').val();
         var phone = $('.phone').val();
+        var sms_num = $('.sms_num').val();
         var post_data = {
             'username': username,
             'email': email,
             'password_1': password_1,
             'password_2': password_2,
-            'phone': phone
+            'phone': phone,
+            'sms_num':sms_num
         };
 
         $.ajax({
@@ -140,7 +142,7 @@ A ny individuals and organizations and not for commercial use, professiona websi
                     alert('短信已发送，清注意查收')
                 }
                 else{
-                    alert('短信服务异常，请稍后再试')
+                    alert(result.error)
                 }
             }
         })
