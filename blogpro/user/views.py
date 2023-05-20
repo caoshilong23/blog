@@ -10,6 +10,7 @@ from django.core.cache import cache
 from tools.login_dec import login_check
 from tools.sms import YunTongXin
 from .models import Userprofile
+from .tasks import send_c
 
 
 # django提供了一个装饰器method_decorator
@@ -114,7 +115,11 @@ def send_sms(request):
         result = {'code': 10110,'error':'the code is existed!'}
         return JsonResponse(result)
     # 发送随机码 -> 短信
-    send(phone,code)
+    # send(phone,code)
+    # celery版发送短信
+    print('sending')
+    send_c.delay(phone,code)
+    print('sended')
     result = {'code': 200}
     return JsonResponse(result)
 

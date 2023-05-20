@@ -3,4 +3,5 @@ blogpro/*/migrations
 blogpro/*/__pycache__
 blogpro/media
 *.pyc
-
+tasks.py
+tasks_result.py
