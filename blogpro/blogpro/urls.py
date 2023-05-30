@@ -26,7 +26,8 @@ urlpatterns = [
     path('test_cors', views.cors_test),
     path('v1/users', user_views.UserViews.as_view()),
     path('v1/users/', include('user.urls')),
-    path('v1/tokens', dtoken_views.tokens)
+    path('v1/tokens', dtoken_views.tokens),
+    path('v1/topics/',include('topic.urls'))
 
 ]
 

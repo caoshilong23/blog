@@ -1,7 +1,8 @@
-.cors配置.txt
+cors配置.txt
 blogpro/*/migrations
 blogpro/*/__pycache__
 blogpro/media
 *.pyc
 tasks.py
 tasks_result.py
+

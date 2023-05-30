@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.conf import settings
 from user.models import Userprofile
 
+
 def login_check(func):
     def warp(request, *args, **kwargs):
         # 获取token request.META.get('HTTP_AUTHORIZATION')
@@ -24,3 +25,15 @@ def login_check(func):
         return func(request, *args, **kwargs)
 
     return warp
+
+
+def get_user_by_request(request):
+    token = request.META.get('HTTP_AUTHORIZATION')
+    if not token:
+        return None
+    try:
+        res = jwt.decode(token, settings.JWT_TOKEN_KEY, algorithms='HS256')
+    except Exception as e:
+        return None
+    username = res['username']
+    return username

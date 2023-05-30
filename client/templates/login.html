@@ -33,7 +33,7 @@ A ny individuals and organizations and not for commercial use, professiona websi
 			</ul>
 			<div class="clear"> </div>
 	</div>
-	
+
 </body>
 <script>
 	function login() {
@@ -52,6 +52,7 @@ A ny individuals and organizations and not for commercial use, professiona websi
 					window.localStorage.setItem('dnblog_token',result.data.token)
 					window.localStorage.setItem('dnblog_user',result.username)
 					alert('登陆成功')
+                    window.location.href='/'+result.username+'/topics'
 				}else {
 					alert(result.error)
 				}
