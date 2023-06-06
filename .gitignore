@@ -5,4 +5,4 @@ blogpro/media
 *.pyc
 tasks.py
 tasks_result.py
-
+.idea/

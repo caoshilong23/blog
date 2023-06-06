@@ -27,7 +27,8 @@ urlpatterns = [
     path('v1/users', user_views.UserViews.as_view()),
     path('v1/users/', include('user.urls')),
     path('v1/tokens', dtoken_views.tokens),
-    path('v1/topics/',include('topic.urls'))
+    path('v1/topics/',include('topic.urls')),
+    path('v1/messages/',include('message.urls'))
 
 ]
 

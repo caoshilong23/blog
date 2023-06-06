@@ -23,7 +23,6 @@ def login_check(func):
         user = Userprofile.objects.get(username=username)
         request.myuser = user
         return func(request, *args, **kwargs)
-
     return warp
 
 
